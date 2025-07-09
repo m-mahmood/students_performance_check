@@ -31,7 +31,7 @@
     <div class="card-body">
       <table class="table table-striped table-bordered">
         <tbody>
-          <!-- <h2 style="text-align: center;">{{ student.pass_fail}}</h2> -->
+          <h2 style="text-align: center;">{{ pass_status }}</h2>
           <tr><th>Roll Number</th><td>{{ student.roll }}</td></tr>
           <tr><th>Full Name</th><td>{{ student.first_name }} {{ student.last_name }}</td></tr>
           <tr><th>Gender</th><td>{{ student.gender }}</td></tr>
@@ -45,15 +45,15 @@
           <tr><th>Biology Score</th><td>{{ student.biology_score }}</td></tr>
           <tr><th>English Score</th><td>{{ student.english_score }}</td></tr>
           <tr><th>Geography Score</th><td>{{ student.geography_score }}</td></tr>
-          <tr><th style="text-align: right;">Total Number</th><td>counting...</td></tr>
-          <tr><th style="text-align: right;">Percentage</th><td> % counting...</td></tr>
+          <tr><th style="text-align: right;">Total Number</th><td>{{ total }}</td></tr>
+          <tr><th style="text-align: right;">Percentage</th><td> {{ percentage }}%</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  {% elif request.GET.roll_number %}
-  <div class="alert alert-danger mt-4">No student found with this roll number.</div>
+  {% elif request.GET.individual_roll %}
+  <div class="alert alert-danger mt-4">No student found with this roll number. Try again!</div>
   {% endif %}
 </div>
 

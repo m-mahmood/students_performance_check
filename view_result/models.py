@@ -15,3 +15,4 @@ class Student_database(models.Model):
     biology_score = models.IntegerField()
     english_score = models.IntegerField()
     geography_score = models.IntegerField()
+
