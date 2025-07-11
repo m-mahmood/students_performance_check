@@ -1,0 +1,29 @@
+{% extends "layout/base_auth.html" %}
+
+{% block content %}
+
+<div class="container center card mt-5 p-5">
+ <div class="p-5 bg-dark text-white"> <h2>Log In Form</h2><p>Login yourself to check your result. Students from 1 to 2000</p></div>
+ <form action="{% url 'login' %}" method="POST" class="card-body">
+    {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="{{ form.username.id_for_label }}">Username:</label>
+      <input type="text" name="{{ form.username.name }}" class="form-control" value="{{ form.username.value }}" placeholder="Enter Username">
+        <span class="text-danger">{{ form.username.errors}}</span>
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="form.password.id_for_label">Password:</label>
+      <input type="password" name="{{ form.password.name }}" class="form-control" value="{{ form.password.value }}" placeholder="Enter Password">
+        <span class="text-danger">{{ form.password.errors}}</span>
+    </div>
+     {% if form.non_field_errors %}
+ <small class="text-danger">
+    {{ form.non_field_errors.as_ul }}
+ </small>
+
+ {% endif %} 
+    <button type="submit" class="btn btn-dark">Login</button>
+    <a href="{% url 'signup' %}">Don't have account?</a>
+  </form>
+</div>
+{% endblock %}
