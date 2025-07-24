@@ -4,6 +4,8 @@ A Django-based web application that allows students to securely check their exam
 The system ensures only authenticated users can access personal academic results, including biodata, subject-wise marks,
 percentage, and pass/fail status.
 
+https://github.com/user-attachments/assets/77415bec-6f14-4b49-8a31-9fb38739dc18
+
 ---
 
 ## 🚀 Features
